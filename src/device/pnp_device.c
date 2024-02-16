@@ -386,6 +386,10 @@ void pnp_enable_devices(struct device *base_dev, struct device_operations *ops,
 		path.pnp.device = info[i].function;
 		dev = alloc_find_dev(base_dev->upstream, &path);
 
+		/* Don't initialize a disabled device. */
+		if (!dev->enabled)
+			continue;
+
 		/* Don't initialize a device multiple times. */
 		if (dev->ops)
 			continue;
