@@ -151,7 +151,11 @@ chip soc/intel/cannonlake
 				device pnp 2e.a off end # Consumer IR
 				device pnp 2e.f off end # Shared Memory/Flash Interface (SMFI)
 				device pnp 2e.10 on # RTC-like Timer
+					io 0x60 = 0x070
 					io 0x62 = 0x360	# BRAM1 I/O base address
+					io 0x64 = 0x0
+					io 0x66 = 0x0
+					irq 0x70 = 0x8
 				end
 				device pnp 2e.11 off end # Power Management I/F Channel 1 (PMC1)
 				device pnp 2e.12 off end # Power Management I/F Channel 2 (PMC2)
