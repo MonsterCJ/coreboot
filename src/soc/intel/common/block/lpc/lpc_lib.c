@@ -76,7 +76,7 @@ void lpc_open_pmio_window(uint16_t base, uint16_t size)
 
 	switch (base) {
 	case 0:
-		printk(BIOS_ERR, "LPC IO decode base 0!\n");
+		printk(BIOS_SPEW, "LPC IO decode base 0; skipping\n");
 		return;
 	case 0x2e:
 	case 0x2f:
